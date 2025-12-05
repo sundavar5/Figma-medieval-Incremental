@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medieval Incremental</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Medieval Kingdom Incremental</p>
+      <h1>Build, Discover, Ascend</h1>
+      <p class="subtitle">Manage your resources, train heroes, and push your realm into legendary ages.</p>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <p class="label">Current Age</p>
+        <p id="ageName" class="value">Dark Age</p>
+        <p id="ageDescription" class="muted">Your people huddle around dim fires...</p>
+      </div>
+      <div class="stat">
+        <p class="label">Progress to Next Age</p>
+        <div class="progress">
+          <div id="ageBar" class="progress-bar" style="width: 0%"></div>
+        </div>
+        <p id="ageRequirement" class="muted">Earn 0 knowledge to advance</p>
+      </div>
+      <div class="stat">
+        <p class="label">Prestige Relics</p>
+        <p id="relics" class="value">0</p>
+        <p class="muted">Permanent +5% production each</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <header class="card__header">
+        <div>
+          <p class="eyebrow">Resources</p>
+          <h2>Economy</h2>
+        </div>
+        <div class="inline-actions">
+          <button id="gatherFood" class="ghost">Gather Food</button>
+          <button id="gatherWood" class="ghost">Chop Wood</button>
+          <button id="gatherStone" class="ghost">Mine Stone</button>
+        </div>
+      </header>
+      <div id="resourceList" class="resource-grid"></div>
+    </section>
+
+    <section class="card">
+      <header class="card__header">
+        <div>
+          <p class="eyebrow">Structures</p>
+          <h2>Buildings</h2>
+          <p class="muted">Improve production and unlock new resources.</p>
+        </div>
+        <span class="badge" id="buildingCount">0 built</span>
+      </header>
+      <div id="buildingList" class="stack"></div>
+    </section>
+
+    <section class="card">
+      <header class="card__header">
+        <div>
+          <p class="eyebrow">Knowledge</p>
+          <h2>Skills &amp; Research</h2>
+          <p class="muted">Spend knowledge to permanently boost your realm.</p>
+        </div>
+        <span class="badge" id="skillCount">0 learned</span>
+      </header>
+      <div id="skillList" class="stack"></div>
+    </section>
+
+    <section class="card">
+      <header class="card__header">
+        <div>
+          <p class="eyebrow">Champions</p>
+          <h2>Heroes</h2>
+          <p class="muted">Recruit legendary figures to multiply your efforts.</p>
+        </div>
+        <span class="badge" id="heroCount">0 recruited</span>
+      </header>
+      <div id="heroList" class="stack"></div>
+    </section>
+
+    <section class="card">
+      <header class="card__header">
+        <div>
+          <p class="eyebrow">Chronicle</p>
+          <h2>Events &amp; Achievements</h2>
+          <p class="muted">Track your unfolding legend.</p>
+        </div>
+        <button id="prestigeButton" class="primary">Ascend for Relics</button>
+      </header>
+      <div class="two-column">
+        <div>
+          <h3>Recent Events</h3>
+          <ul id="eventLog" class="log"></ul>
+        </div>
+        <div>
+          <h3>Achievements</h3>
+          <ul id="achievementList" class="log"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <p class="eyebrow">Adventures</p>
+      <p id="questStatus" class="muted">Send explorers to discover ancient secrets once you reach the Age of Discovery.</p>
+    </div>
+    <div id="questList" class="quest-grid"></div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
